@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('rectruiters', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('company_name');
+            $table->foreignId('recruiter_email')->contrained('users','email')->cascadeOnDelete();
+            $table->string('contact');
+            $table->string('address');
+            $table->string('about');
+            $table->string('profile');
             $table->timestamps();
         });
     }

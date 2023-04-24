@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('applied_jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('admin_email')->contrained('users','email')->cascadeOnDelete();
-            $table->string('profile');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('professional');
+            $table->foreignId('employee_id')->contrained('employee','id')->cascadeOnDelete();
+            $table->foreignId('recruiter_id')->contrained('recruiter','id')->cascadeOnDelete();
+            $table->foreignId('job_post_id')->contrained('job_post','id')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('applied_jobs');
     }
 };
