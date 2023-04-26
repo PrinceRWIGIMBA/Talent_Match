@@ -60,6 +60,6 @@ class AuthController extends Controller
 function getAllUser(){
     $users=User::all();
 
-    return $users;
+    return responce()->json($user);
 }
 }
