@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_email')->contrained('users','email')->cascadeOnDelete();
+            $table->string('name');
+            $table->foreignId('employee_id')->contrained('users','id')->cascadeOnDelete();
+            $table->string('employee_email')->unique();
             $table->string('avilability');
             $table->string('phone');
             $table->enum('gender',['male','female']);

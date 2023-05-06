@@ -348,8 +348,8 @@ class ComposerStaticInit818ee7ddf19d5ff1b53403a36e224879
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -546,7 +546,6 @@ class ComposerStaticInit818ee7ddf19d5ff1b53403a36e224879
         'App\\Http\\Controllers\\JobPostController' => __DIR__ . '/../..' . '/app/Http/Controllers/JobPostController.php',
         'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\RectruiterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RectruiterController.php',
-        'App\\Http\\Controllers\\TasksController' => __DIR__ . '/../..' . '/app/Http/Controllers/TasksController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -565,8 +564,7 @@ class ComposerStaticInit818ee7ddf19d5ff1b53403a36e224879
         'App\\Http\\Requests\\storeUserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/storeUserRequest.php',
         'App\\Kernel' => __DIR__ . '/..' . '/laravel/pint/app/Kernel.php',
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
-        'App\\Models\\Rectruiter' => __DIR__ . '/../..' . '/app/Models/Rectruiter.php',
-        'App\\Models\\Tasks' => __DIR__ . '/../..' . '/app/Models/Tasks.php',
+        'App\\Models\\Recruiter' => __DIR__ . '/../..' . '/app/Models/Recruiter.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\applied_job' => __DIR__ . '/../..' . '/app/Models/applied_job.php',
         'App\\Models\\employee' => __DIR__ . '/../..' . '/app/Models/employee.php',

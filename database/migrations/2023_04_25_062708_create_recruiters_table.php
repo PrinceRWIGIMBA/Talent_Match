@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('recruiters', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('recruiter_id')->contrained('users','id')->cascadeOnDelete();
             $table->string('company_name');
-            $table->foreignId('recruiter_email')->contrained('users','email')->cascadeOnDelete();
+            $table->string('company_email')->unique()->nullable();
             $table->string('contact');
             $table->string('address');
             $table->string('about');
