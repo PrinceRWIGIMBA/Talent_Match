@@ -9,7 +9,7 @@ paths:
     get:
       tags:
       - User
-      summary: Authentication API
+      summary: Get Users
       responses:
         200:
           description: User List

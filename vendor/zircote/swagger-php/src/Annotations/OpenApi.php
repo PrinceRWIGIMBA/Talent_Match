@@ -6,8 +6,6 @@
 
 namespace OpenApi\Annotations;
 
-
-
 use OpenApi\Analysis;
 use OpenApi\Generator;
 use OpenApi\Util;
