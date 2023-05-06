@@ -8,13 +8,34 @@ use Illuminate\Support\Facades\Hash;
 use App\Traits\HttpResponses;
 use App\Http\Requests\storeUserRequest;
 use App\Http\Requests\loginUserRequest;
+
 use App\Http\Controllers\Controller;
 use App\Models\User;
 
 
 
+
+
+
 class AuthController extends Controller
 {
+        /**
+     * @OA\Post(
+     *     path="/api/login",
+     *    operationId="LOGIN_ID",
+*      tags={"Authentication API"},
+*      summary="LOGIN",
+*      description="LOGIN THE USERS FROM DATABASE",
+        *@OA\RequestBody(
+    *          required=true,
+    *          @OA\JsonContent()
+    *      ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
     use HttpResponses;
     public function login(loginUserRequest $request){
 
@@ -30,6 +51,24 @@ class AuthController extends Controller
         ]);
          
     }
+
+      /**
+     * @OA\Post(
+     *     path="/api/register",
+     *    operationId="REGISTER_ID",
+*      tags={"Authentication API"},
+*      summary="REGISTER USER",
+*      description="REGISTER USER TO THE USERS FROM DATABASE",
+* @OA\RequestBody(
+    *          required=true,
+    *          @OA\JsonContent()
+    *      ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
 
     public function register(storeUserRequest $request){
 
@@ -47,6 +86,23 @@ class AuthController extends Controller
         ]);
     }
 
+      /**
+     * @OA\Post(
+     *     path="/api/logout",
+     *    operationId="LOGOUT_ID",
+*      tags={"Authentication API"},
+*      summary="GET ALL USER",
+*      description="DELETE USERS FROM DATABASE",
+* @OA\RequestBody(
+    *          required=true,
+    *          @OA\JsonContent()
+    *      ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
     public function logout(){
         Auth::User()->currentAccessToken()->delete();
         return $this->success([
@@ -55,7 +111,19 @@ class AuthController extends Controller
         ]);
 
     }
-
+/**
+* @OA\Get(
+*      path="/api/getAllUser",
+*      operationId="GETALLUSER_ID",
+*      tags={"Authentication API"},
+*      summary="GET ALL USER",
+*      description="GETING ALL THE USERS FROM DATABASE",
+*      @OA\Response(
+*          response=200,
+*          description="the data",
+*       ),
+*     )
+*/
 
 function getAllUser(){
     $users=User::all();

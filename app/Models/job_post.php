@@ -10,7 +10,7 @@ class job_post extends Model
     use HasFactory;
     protected $fillable = [
         'recruiter_id',
-        'typer',
+        'type',
         'no_opening',
         'working_days',
         'position',
@@ -24,4 +24,8 @@ class job_post extends Model
         'status'
         
         ];
+
+        public function job_post(){
+            return $this->belongTo(job_post::class);
+        }
 }

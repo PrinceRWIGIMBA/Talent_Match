@@ -16,7 +16,7 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->role !=='user') {
+        if(Auth::user()->role !=='employee') {
             abort(403, 'Unauthorized action.');
            
         }

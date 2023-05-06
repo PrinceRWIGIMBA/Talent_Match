@@ -1,0 +1,398 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Talent Match API",
+        "description": "Back End API Using Laravel",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/admin": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "list of all admin",
+                "description": "this API list all information about admins",
+                "operationId": "index_admin",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/admin/store": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "store_admin info",
+                "description": "this API store information of admins",
+                "operationId": "store_admin",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/admin/update": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "update admin info",
+                "description": "this API update user information",
+                "operationId": "admin_update_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/admin/delete": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "this API delete admin info",
+                "description": "this API delete admin information from database",
+                "operationId": "admin_delete_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Authentication API"
+                ],
+                "summary": "LOGIN",
+                "description": "LOGIN THE USERS FROM DATABASE",
+                "operationId": "LOGIN_ID",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Authentication API"
+                ],
+                "summary": "REGISTER USER",
+                "description": "REGISTER USER TO THE USERS FROM DATABASE",
+                "operationId": "REGISTER_ID",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Authentication API"
+                ],
+                "summary": "GET ALL USER",
+                "description": "DELETE USERS FROM DATABASE",
+                "operationId": "LOGOUT_ID",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/getAllUser": {
+            "get": {
+                "tags": [
+                    "Authentication API"
+                ],
+                "summary": "GET ALL USER",
+                "description": "GETING ALL THE USERS FROM DATABASE",
+                "operationId": "GETALLUSER_ID",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/employee": {
+            "get": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "list of all employee",
+                "description": "this API list all information about employees",
+                "operationId": "index_employee",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/employee/store": {
+            "post": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "store_employee info",
+                "description": "this API store information of employees",
+                "operationId": "store_employee",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/employee/update": {
+            "put": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "update employee info",
+                "description": "this API update user information",
+                "operationId": "employee_update_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/employee/delete": {
+            "delete": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "this API delete employee info",
+                "description": "this API delete employee information from database",
+                "operationId": "employee_delete_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/job_post": {
+            "get": {
+                "tags": [
+                    "Job_post"
+                ],
+                "summary": "list of all job_post",
+                "description": "this API list all information about job_posts",
+                "operationId": "index_job_post",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/job_post/store": {
+            "post": {
+                "tags": [
+                    "Job_post"
+                ],
+                "summary": "store_job_post info",
+                "description": "this API store information of job_posts",
+                "operationId": "store_job_post",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/job_post/update": {
+            "put": {
+                "tags": [
+                    "Job_post"
+                ],
+                "summary": "update job_post info",
+                "description": "this API update user information",
+                "operationId": "job_post_update_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/job_post/delete": {
+            "delete": {
+                "tags": [
+                    "Job_post"
+                ],
+                "summary": "this API delete job_post info",
+                "description": "this API delete job_post information from database",
+                "operationId": "job_post_delete_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/recruiter": {
+            "get": {
+                "tags": [
+                    "Recruiter"
+                ],
+                "summary": "list of all recruiter",
+                "description": "this API list all information about recruiters",
+                "operationId": "index_recruiter",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/recruiter/store": {
+            "post": {
+                "tags": [
+                    "Recruiter"
+                ],
+                "summary": "store_recruiter info",
+                "description": "this API store information of recruiters",
+                "operationId": "store_recruiter",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/recruiter/update": {
+            "put": {
+                "tags": [
+                    "Recruiter"
+                ],
+                "summary": "update recruiter info",
+                "description": "this API update user information",
+                "operationId": "update_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/recruiter/delete": {
+            "delete": {
+                "tags": [
+                    "Recruiter"
+                ],
+                "summary": "this API delete recruiter info",
+                "description": "this API delete recruiter information from database",
+                "operationId": "recruiter_delete_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TasksController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\RectruiterController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\RecruiterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JobPostController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,32 +42,51 @@ use App\Http\Controllers\JobPostController;
 
 Route::post('/login',[AuthController::class, 'login']);
 Route::post('/register',[AuthController::class, 'register']);
-Route::get('/all',[AuthController::class, 'getAllUser']);
+Route::get('/getAll',[AuthController::class, 'getAllUser']);
 
 
 
 //protected routes
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     // Routes that require admin role
-    Route::resource('/admin',AdminController::class);
-    Route::post('/logout',[AuthController::class, 'logout']);
+    Route::get('/admin',[AdminController::class, 'getAll']);
+    Route::post('/admin/store',[AdminController::class, 'createadmin']);
+    Route::patch('/admin/update/{admin}',[AdminController::class,'updateAdmin']);
+    Route::delete('/admin/delete/{admin}',[AdminController::class,'destroyadmin']);
+    Route::post('/admin/logout',[AuthController::class, 'logout']);
     //  Route::resource('/users',UserController::class);
    // Route::resource('/recruiter',RecruiterController::class);
    // Route::resource('/jobPost',JobPostController::class);
 });
 
-Route::middleware(['auth:sanctum', 'recruiter'])->group(function () {
+Route::middleware(['auth:sanctum','recruiter'])->group(function () {
     // Routes that require recruiter role
-   Route::resource('/recruiter',RectruiterController::class);
-   Route::post('/logout',[AuthController::class, 'logout']);
+    Route::get('/recruiter',[RecruiterController::class, 'getAll']);
+    Route::post('/recruiter/store',[RecruiterController::class, 'createRecruiter']);
+    Route::patch('/recruiter/update/{recruiter}',[RecruiterController::class,'updateRecruiter']);
+    Route::delete('/recruiter/delete/{recruiter}',[RecruiterController::class,'destroyRecruiter']);
+
+
+    Route::get('/job_post',[JobPostController::class, 'getAll']);
+    Route::post('/job_post/store',[JobPostController::class, 'createjob_post']);
+    Route::patch('/job_post/update/{job_post}',[JobPostController::class,'updatejob_post']);
+    Route::delete('/job_post/delete/{job_post}',[JobPostController::class,'destroyjob_post']);
+
+
+
+    Route::post('/recruiter/logout',[AuthController::class,'logout']);
+     //Route::resource('/recruiter',RecruiterController::class);
    // Route::resource('/jobPost',JobPostController::class);
 });
 
 
-Route::middleware(['auth:sanctum', 'user'])->group(function () {
+Route::middleware(['auth:sanctum','employee'])->group(function () {
     // Routes that require user role
-    Route::resource('/users',UserController::class);
-    Route::post('/logout',[AuthController::class, 'logout']);
+    Route::get('/employee',[EmployeeController::class, 'getAll']);
+    Route::post('/employee/store',[EmployeeController::class, 'createemployee']);
+    Route::patch('/employee/update/{employee}',[EmployeeController::class,'updateemployee']);
+    Route::delete('/employee/delete/{employee}',[EmployeeController::class,'destroyemployee']);
+    Route::post('employee/logout',[AuthController::class, 'logout']);
    // Route::resource('/jobPost',JobPostController::class);
 });
 

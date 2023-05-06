@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('admin_email')->contrained('users','email')->cascadeOnDelete();
+            $table->foreignId('admin_id')->contrained('users','id')->cascadeOnDelete();
+            $table->string('admin_email')->unique()->nullable();
             $table->string('profile');
             $table->string('phone');
             $table->string('address');
