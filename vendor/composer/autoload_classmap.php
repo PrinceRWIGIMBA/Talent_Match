@@ -16,7 +16,6 @@ return array(
     'App\\Factories\\ConfigurationResolverFactory' => $vendorDir . '/laravel/pint/app/Factories/ConfigurationResolverFactory.php',
     'App\\Fixers\\LaravelPhpdocAlignmentFixer' => $vendorDir . '/laravel/pint/app/Fixers/LaravelPhpdocAlignmentFixer.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
-    'App\\Http\\Controllers\\AdminController1' => $baseDir . '/app/Http/Controllers/AdminController1.php',
     'App\\Http\\Controllers\\AppliedJobController' => $baseDir . '/app/Http/Controllers/AppliedJobController.php',
     'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',

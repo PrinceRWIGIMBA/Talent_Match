@@ -544,7 +544,6 @@ class ComposerStaticInit818ee7ddf19d5ff1b53403a36e224879
         'App\\Factories\\ConfigurationResolverFactory' => __DIR__ . '/..' . '/laravel/pint/app/Factories/ConfigurationResolverFactory.php',
         'App\\Fixers\\LaravelPhpdocAlignmentFixer' => __DIR__ . '/..' . '/laravel/pint/app/Fixers/LaravelPhpdocAlignmentFixer.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
-        'App\\Http\\Controllers\\AdminController1' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController1.php',
         'App\\Http\\Controllers\\AppliedJobController' => __DIR__ . '/../..' . '/app/Http/Controllers/AppliedJobController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
