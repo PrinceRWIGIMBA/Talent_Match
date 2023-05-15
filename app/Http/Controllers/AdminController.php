@@ -23,7 +23,7 @@ class AdminController extends Controller
      *    operationId="index_admin",
 *      tags={"Admin"},
 *      summary="list of all admin",
-*      description="this API list all information about admins",
+*      description="this API List All Information about admins",
         *@OA\RequestBody(
     *          required=true,
     *          @OA\JsonContent()
