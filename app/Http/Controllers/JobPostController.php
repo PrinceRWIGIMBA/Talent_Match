@@ -19,7 +19,7 @@ class JobPostController extends Controller
     *    operationId="index_job_post",
 *      tags={"Job_post"},
 *      summary="list of all job_post",
-*      description="this API list all information about job_posts",
+*      description="this API List All Information about job_posts",
        *@OA\RequestBody(
    *          required=true,
    *          @OA\JsonContent()
