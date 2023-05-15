@@ -123,7 +123,12 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "The data"
+                        "description": "The data",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
                     }
                 }
             }

@@ -65,7 +65,8 @@ class AuthController extends Controller
     *      ),
      *     @OA\Response(
      *         response="200",
-     *         description="The data"
+     *         description="The data",
+     *       @OA\JsonContent()
      *     )
      * )
      */

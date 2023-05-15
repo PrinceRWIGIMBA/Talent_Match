@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('employee_id')->contrained('employee','id')->cascadeOnDelete();
             $table->foreignId('recruiter_id')->contrained('recruiter','id')->cascadeOnDelete();
             $table->foreignId('job_post_id')->contrained('job_post','id')->cascadeOnDelete();
+            $table->enum('status',['accepted','rejected','inprogress'])->default('inprogress');
             $table->timestamps();
         });
     }

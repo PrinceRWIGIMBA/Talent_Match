@@ -54,6 +54,23 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::patch('/admin/update/{admin}',[AdminController::class,'updateAdmin']);
     Route::delete('/admin/delete/{admin}',[AdminController::class,'destroyadmin']);
     Route::post('/admin/logout',[AuthController::class, 'logout']);
+
+
+    Route::get('/recruiter',[RecruiterController::class, 'getAll']);
+    Route::post('/recruiter/store',[RecruiterController::class, 'createRecruiter']);
+    Route::patch('/recruiter/update/{recruiter}',[RecruiterController::class,'updateRecruiter']);
+    Route::delete('/recruiter/delete/{recruiter}',[RecruiterController::class,'destroyRecruiter']);
+
+    Route::get('/employee',[EmployeeController::class, 'getAll']);
+    Route::post('/employee/store',[EmployeeController::class, 'createemployee']);
+    Route::patch('/employee/update/{employee}',[EmployeeController::class,'updateemployee']);
+    Route::delete('/employee/delete/{employee}',[EmployeeController::class,'destroyemployee']);
+
+    Route::get('/job_post',[JobPostController::class, 'getAll']);
+    Route::post('/job_post/store',[JobPostController::class, 'createjob_post']);
+    Route::patch('/job_post/update/{job_post}',[JobPostController::class,'updatejob_post']);
+    Route::delete('/job_post/delete/{job_post}',[JobPostController::class,'destroyjob_post']);
+
     //  Route::resource('/users',UserController::class);
    // Route::resource('/recruiter',RecruiterController::class);
    // Route::resource('/jobPost',JobPostController::class);
@@ -83,6 +100,7 @@ Route::middleware(['auth:sanctum','recruiter'])->group(function () {
 Route::middleware(['auth:sanctum','employee'])->group(function () {
     // Routes that require user role
     Route::get('/employee',[EmployeeController::class, 'getAll']);
+    Route::get('/job_post',[JobPostController::class, 'getAll']);
     Route::post('/employee/store',[EmployeeController::class, 'createemployee']);
     Route::patch('/employee/update/{employee}',[EmployeeController::class,'updateemployee']);
     Route::delete('/employee/delete/{employee}',[EmployeeController::class,'destroyemployee']);
