@@ -25,7 +25,7 @@ class AuthController extends Controller
      *    operationId="LOGIN_ID",
 *      tags={"Authentication API"},
 *      summary="LOGIN",
-*      description="LOGIN THE USERS FROM DATABASE",
+*      description="LOGIN THE USER FROM DATABASE",
         *@OA\RequestBody(
     *          required=true,
     *          @OA\JsonContent()
@@ -92,7 +92,7 @@ class AuthController extends Controller
      *    operationId="LOGOUT_ID",
 *      tags={"Authentication API"},
 *      summary="GET ALL USER",
-*      description="DELETE USERS FROM DATABASE",
+*      description="DELETE USER FROM DATABASE",
 * @OA\RequestBody(
     *          required=true,
     *          @OA\JsonContent()
@@ -130,4 +130,5 @@ function getAllUser(){
 
     return responce()->json($user);
 }
+//this is nit used this time
 }
