@@ -99,7 +99,7 @@ class RecruiterController extends Controller
 *      operationId="recruiter_delete_id",
 *      tags={"Recruiter"},
 *      summary="this API delete recruiter info",
-*      description="this API delete recruiter information from database",
+*      description="this API Delete Recruiter Information From Database",
 *    
 *      @OA\Response(
 *          response=200,
