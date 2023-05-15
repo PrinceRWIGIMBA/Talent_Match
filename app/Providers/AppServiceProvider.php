@@ -12,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        Schema::defaultStingLength(191);
+        Schema::defaultStingLength(255);
         $this->app->register(\L5Swagger\L5SwaggerServiceProvider::class);
     }
 
