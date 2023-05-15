@@ -46,7 +46,7 @@ class EmployeeController extends Controller
      *    operationId="store_employee",
 *      tags={"Employee"},
 *      summary="store_employee info",
-*      description="this API store information of employees",
+*      description="this API Store Information Of Employees",
 * @OA\RequestBody(
     *          required=true,
     *          @OA\JsonContent()
