@@ -18,7 +18,7 @@ class RecruiterController extends Controller
      *    operationId="index_recruiter",
 *      tags={"Recruiter"},
 *      summary="list of all recruiter",
-*      description="this API list all information about recruiters",
+*      description="this API List All Information About Recruiters",
         *@OA\RequestBody(
     *          required=true,
     *          @OA\JsonContent()
