@@ -130,5 +130,6 @@ function getAllUser(){
 
     return responce()->json($user);
 }
-//this is nit used this time
+//this is not used this time
+//but you can try it if you want
 }

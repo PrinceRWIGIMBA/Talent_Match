@@ -88,7 +88,7 @@
                     "Authentication API"
                 ],
                 "summary": "LOGIN",
-                "description": "LOGIN THE USERS FROM DATABASE",
+                "description": "LOGIN THE USER FROM DATABASE",
                 "operationId": "LOGIN_ID",
                 "requestBody": {
                     "required": true,
@@ -134,7 +134,7 @@
                     "Authentication API"
                 ],
                 "summary": "GET ALL USER",
-                "description": "DELETE USERS FROM DATABASE",
+                "description": "DELETE USER FROM DATABASE",
                 "operationId": "LOGOUT_ID",
                 "requestBody": {
                     "required": true,
