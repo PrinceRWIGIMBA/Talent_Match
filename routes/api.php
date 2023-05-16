@@ -10,6 +10,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\RecruiterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JobPostController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Controller;
 
 /*
@@ -43,6 +44,13 @@ use App\Http\Controllers\Controller;
 Route::post('/login',[AuthController::class, 'login']);
 Route::post('/register',[AuthController::class, 'register']);
 Route::get('/getAll',[AuthController::class, 'getAllUser']);
+
+
+
+Route::get('/message',[MessageController::class, 'getAll']);
+Route::post('/message/store',[MessageController::class, 'store']);
+Route::patch('/message/update/{message}',[MessageController::class,'update']);
+Route::delete('/message/delete/{message}',[MessageController::class,'destroy']);
 
 
 
