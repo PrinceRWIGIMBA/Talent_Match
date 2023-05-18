@@ -12,7 +12,7 @@
                     "Admin"
                 ],
                 "summary": "list of all admin",
-                "description": "this API list all information about admins",
+                "description": "this aPI List all information about admins",
                 "operationId": "index_admin",
                 "requestBody": {
                     "required": true,
@@ -195,7 +195,7 @@
                     "Employee"
                 ],
                 "summary": "store_employee info",
-                "description": "this API store information of employees",
+                "description": "this API Store Information Of Employees",
                 "operationId": "store_employee",
                 "requestBody": {
                     "required": true,
@@ -318,13 +318,89 @@
                 }
             }
         },
+        "/api/message": {
+            "get": {
+                "tags": [
+                    "message"
+                ],
+                "summary": "list of all message",
+                "description": "this API List All Information About messages",
+                "operationId": "index_message",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/message/store": {
+            "post": {
+                "tags": [
+                    "message"
+                ],
+                "summary": "store_message info",
+                "description": "this API store information of messages",
+                "operationId": "store_message",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        "/api/message/update": {
+            "put": {
+                "tags": [
+                    "message"
+                ],
+                "summary": "update message info",
+                "description": "this API update user information",
+                "operationId": "update_id1",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
+        "/api/message/delete": {
+            "delete": {
+                "tags": [
+                    "message"
+                ],
+                "summary": "this API delete message info",
+                "description": "this API Delete message Information From Database",
+                "operationId": "message_delete_id",
+                "responses": {
+                    "200": {
+                        "description": "the data"
+                    }
+                }
+            }
+        },
         "/api/recruiter": {
             "get": {
                 "tags": [
                     "Recruiter"
                 ],
                 "summary": "list of all recruiter",
-                "description": "this API list all information about recruiters",
+                "description": "this API List All Information About Recruiters",
                 "operationId": "index_recruiter",
                 "requestBody": {
                     "required": true,
@@ -385,7 +461,7 @@
                     "Recruiter"
                 ],
                 "summary": "this API delete recruiter info",
-                "description": "this API delete recruiter information from database",
+                "description": "this API Delete Recruiter Information From Database",
                 "operationId": "recruiter_delete_id",
                 "responses": {
                     "200": {
