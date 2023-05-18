@@ -12,144 +12,104 @@ use App\Http\Resources\MessageResource;
 class MessageController extends Controller
 {
     /**
-* @OA\Get(
-*      path="/api/message",
-*      operationId="get_all_users",
-*      tags={"message API"},
-*      summary="GET ALL USER",
-*      description="GETING ALL THE USERS FROM DATABASE",
+     * @OA\get(
+     *     path="/api/message",
+     *    operationId="index_message",
+*      tags={"message"},
+*      summary="list of all message",
+*      description="this API List All Information About messages",
+        *@OA\RequestBody(
+    *          required=true,
+    *          @OA\JsonContent()
+    *      ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
+    use HttpResponses;
+    public function getAll()
+    {
+        return messageResource::collection(
+
+            message::where('message_id',Auth::user()->id)->get()
+        );
+    }
+
+      /**
+     * @OA\Post(
+     *     path="/api/message/store",
+     *    operationId="store_message",
+*      tags={"message"},
+*      summary="store_message info",
+*      description="this API store information of messages",
+* @OA\RequestBody(
+    *          required=true,
+    *          @OA\JsonContent()
+    *      ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
+
+     public function createmessage(storemessage $request)
+     {
+         $request->validated($request->all());
+       
+         $message=message::create([
+             'company_name'=>Auth::User()->name,
+             'message_id'=>Auth::User()->id,
+             'company_email'=>Auth::User()->email,
+             'contact'=>$request->contact,
+             'address'=>$request->address,
+             'about'=>$request->about,
+             'profile'=>$request->profile
+         ]);
+ 
+         return response()->json($message);
+     }
+
+    /**
+    * @OA\Put(
+    *      path="/api/message/update",
+    *      operationId="update_id1",
+    *      tags={"message"},
+    *      summary="update message info",
+    *      description="this API update user information",
+    *   
+    *     
+    *      @OA\Response(
+    *          response=200,
+    *          description="the data",
+    *       ),
+    *     )
+    */
+    public function updatemessage(Request $request, message $message)
+    {
+       $message->update($request->all());
+       return new messageResource($message);
+    }
+/**
+* @OA\Delete(
+*      path="/api/message/delete",
+*      operationId="message_delete_id",
+*      tags={"message"},
+*      summary="this API delete message info",
+*      description="this API Delete message Information From Database",
+*    
 *      @OA\Response(
 *          response=200,
 *          description="the data",
 *       ),
 *     )
 */
-use HttpResponses;
-/**
- * Display a listing of the resource.
- */
-public function getAll()
-{
-    return MessageResource::collection(
 
-        message::all()
-    );
-}
-/**
- * Show the form for creating a new resource.
- */
-public function create()
+public function destroymessage(message $message)
 {
-    //
-}
- /**
- * @OA\Post(
- *     path="/api/message/store",
- *    operationId="message_store",
-*      tags={"message API"},
-*      summary="store message",
-*      description="this api is used to store the information of message",
-    *@OA\RequestBody(
-*          required=true,
-*          @OA\JsonContent()
-*      ),
- *     @OA\Response(
- *         response="200",
- *         description="The data"
- *     )
- * )
- */
-/**
- * Store a newly created resource in storage.
- */
-public function store(StoreMessage $request)
-{
-    $request->validated($request->all());
-  
-    $message=message::create([
-        'full_name'=>$request->full_name,
-        'email'=>$request->email,
-        'message'=>$request->message
-    ]);
-
-    return response()->json($message);
-}
-
-/**
- * Display the specified resource.
- */
-public function show(Message $message)
-{
-  
-    return $this->isNotauthorized($message) ? $this->isNotauthorized($message) : new MessageResource($message);
-}
-
-/**
- * Show the form for editing the specified resource.
- */
-public function edit(string $id)
-{
-    //
-}
-/**
-* @OA\Put(
-*      path="/api/message/update",
-*      operationId="message-update",
-*      tags={"message API"},
-*      description="this api if for updating message",
-*      @OA\Parameter(
-*          description="Parameter with example",
-*          in="path",
-*          name="id",
-*          required=true,
-*          @OA\Schema(type="int"),
-*          @OA\Examples(example="int", value="1", summary="an int value"),
-*      ),
-*      @OA\RequestBody(
-*          required=Parameter with example,
-*          @OA\JsonContent(ref="#/components/schemas/path")
-*      ),
-*      @OA\Response(
-*          response=int,
-*          description="1",
-*       ),
-*     )
-*/    /**
- * Update the specified resource in storage.
- */
-
-public function update(Request $request, Message $message)
-{
-   $message->update($request->all());
-   return new MessageResource($message);
-}
-/**
-* @OA\Delete(
-*      path="/api/message/delete",
-*      operationId="message_delete",
-*      tags={"message API"},
-*      summary="this is used to delete particural user",
-*      description="this api will be used to delete message form database ",
-*      @OA\Parameter(
-*          description="Parameter with example",
-*          in="path",
-*          name="id",
-*          required=true,
-*          @OA\Schema(type="int"),
-*          @OA\Examples(example="int", value="1", summary="an int value"),
-*      ),
-*      @OA\Response(
-*          response=Response Code,
-*          description="Response Message",
-*       ),
-*     )
-*/
-/**
- * Remove the specified resource from storage.
- */
-public function destroy(Message $message)
-{
-    return $message->delete();
+    return $this->isNotauthorized($message) ? $this->isNotauthorized($message) : $message->delete();
 
 }
 
@@ -162,3 +122,4 @@ public function isNotauthorized($message){
 
 }
 }
+
